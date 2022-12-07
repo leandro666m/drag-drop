@@ -9,6 +9,7 @@ function handleSubmit(){
     if(text!==""){
         //mandar a llamar el emit
         emits('onNewItem', text);
+        text.value = "";
     }
 }
 
@@ -17,12 +18,16 @@ function handleSubmit(){
 
 <template>
     <form action="" @submit.prevent="handleSubmit">
-        <input type="text" v-bind="text" /> 
-
+        <input type="text" v-model="text" /> 
     </form>
 </template>
 
 
 <style scoped>
-
+form{ 
+    margin-bottom: 10px;
+}
+input{ 
+    border-radius: 5px;
+}
 </style>
